@@ -9,11 +9,9 @@ module.exports = class Uploader {
 	}
 
 	async getGithubRepo() {
-		this.req.url = this.github.listRepositaries(this.req.query)
-        console.log(this.req.url)
-		const fileAdded = await githubProxy({ req: this.req, res: this.res });
-        
-		return fileAdded;
+		this.req.url = this.github.listRepositaries(this.req.query);
+		const  data = await githubProxy({ req: this.req, res: this.res });
+		return data;
         
 	}
 
